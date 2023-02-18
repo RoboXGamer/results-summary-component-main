@@ -1,0 +1,216 @@
+/* @import "https://unpkg.com/open-props"; */
+
+:root {
+  font-family: "Hanken Grotesk", sans-serif;
+  /* Colors */
+
+  --primary1-hsl: 0 100% 67%;
+  --primary1: hsl(var(--primary1-hsl));
+  --primary2-hsl: 39 100% 56%;
+  --primary2: hsl(var(--primary2-hsl));
+  --primary3-hsl: 166 100% 37%;
+  --primary3: hsl(var(--primary3-hsl));
+  --primary4-hsl: 234 85% 45%;
+  --primary4: hsl(var(--primary4-hsl));
+
+  --neutral1: hsl(0, 0%, 100%);
+  --neutral2: hsl(221, 100%, 96%);
+  --neutral3: hsl(241, 100%, 89%);
+  --neutral4: hsl(224, 30%, 27%);
+
+  --gradient-bg1: hsl(252, 100%, 67%);
+  --gradient-bg2: hsl(241, 81%, 54%);
+  --gradient1: hsla(256, 72%, 46%, 1);
+  --gradient2: hsla(241, 72%, 46%, 0);
+
+  --shadow-color: 220 3% 15%;
+  --shadow-strength: 25%;
+  --shadow: 0 3px 5px -2px hsl(var(--shadow-color) /
+          calc(var(--shadow-strength) + 3%)),
+    0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%));
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  font-size: 18px;
+  text-rendering: optimizeSpeed;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+main {
+  text-align: center;
+  color: var(--neutral1);
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+}
+
+.grid-even {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: calc(352px * 2);
+}
+
+@media only screen and (max-width: 768px) {
+  .grid-even {
+    grid-template-columns: 1fr;
+  }
+}
+.title {
+  font-weight: bold;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-image: linear-gradient(
+    180deg,
+    var(--gradient-bg1),
+    var(--gradient-bg2)
+  );
+  border-radius: 20px;
+  max-width: 352px;
+}
+.summary-container {
+  color: var(--neutral4);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  text-align: start;
+  max-width: 352px;
+}
+
+.circle {
+  aspect-ratio: 1;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10000px;
+  background-image: linear-gradient(180deg, var(--gradient1), var(--gradient2));
+}
+
+.score {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.text {
+  color: var(--neutral3);
+  font-weight: 500;
+}
+
+.Cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card-1,
+.card-2,
+.card-3,
+.card-4 {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 0.75rem;
+}
+
+div > img,
+div > p {
+  display: inline-block;
+}
+
+.card-1 > span,
+.card-2 > span,
+.card-3 > span,
+.card-4 > span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.card-1 > :last-child,
+.card-2 > :last-child,
+.card-3 > :last-child,
+.card-4 > :last-child {
+  color: black;
+}
+
+.card-1 {
+  background-color: hsl(var(--primary1-hsl) / 0.1);
+  color: var(--primary1);
+}
+
+.card-2 {
+  background-color: hsl(var(--primary2-hsl) / 0.1);
+  color: var(--primary2);
+}
+
+.card-3 {
+  background-color: hsl(var(--primary3-hsl) / 0.1);
+  color: var(--primary3);
+}
+
+.card-4 {
+  background-color: hsl(var(--primary4-hsl) / 0.1);
+  color: var(--primary4);
+}
+
+button {
+  background-color: var(--neutral4);
+  color: var(--neutral1);
+  padding: 0.5rem;
+  border-radius: 50px;
+  border: none;
+}
+
+button:hover,
+button:active {
+  --shadow-strength: 50%;
+  --shadow: 0 3px 5px -2px hsl(var(--shadow-color) /
+          calc(var(--shadow-strength) + 3%)),
+    0 7px 14px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%));
+  box-shadow: var(--shadow);
+  background: linear-gradient(180deg, var(--gradient-bg1), var(--gradient-bg2));
+  cursor: pointer;
+}
