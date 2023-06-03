@@ -49,14 +49,6 @@ dd {
   margin: 0;
 }
 
-body {
-  font-size: 18px;
-  text-rendering: optimizeSpeed;
-  display: flex;
-  justify-content: center;
-  margin-top: 10%;
-}
-
 img,
 picture {
   max-width: 100%;
@@ -68,6 +60,15 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+body {
+  font-size: 18px;
+  text-rendering: optimizeSpeed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 main {
